@@ -1,11 +1,13 @@
 class OrdersController < ApplicationController
-  include Order
   def index
   end
 
   def show
     @results = []
-
+    params[:howmany].to_i.times do |i|
+      @results.push(params[:peaple][:"person#{i}"])
+    end
+    @results.shuffle!
   end
 
   def create
@@ -16,9 +18,4 @@ class OrdersController < ApplicationController
     end
   end
 
-  def order
-    @results = []
-    @results = order(params[:peaple])
-    render :show
-  end
 end

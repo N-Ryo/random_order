@@ -1,5 +1,5 @@
-
-<%= form_with url: show_path, local: true do |f| %>
+<%= form_with url: show_path, local: true, method: :get do |f| %>
+  <%= f.hidden_field "howmany", value: @peaple %>
   <% @peaple.times do |i|%>
     <div>
       <%= f.text_field "peaple[person#{i}]", placeholder: "名前を入力してください", require: true %>

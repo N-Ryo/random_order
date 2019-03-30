@@ -1,1 +1,3 @@
-<%= @results %>
+<% @results.each_with_index do |r,i| %>
+  <div><%= i + 1 %>. <%= r %></div>
+<% end %>
